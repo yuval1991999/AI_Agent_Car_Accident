@@ -6,12 +6,11 @@ Welcome to our project! we wish you happy coding and studying!!
 - [Car Accident Insurance RAG](#car-accident-insurance-rag)
 - [Requirements](#requirements)
 - [API Key and Environment Setup](#api-key-and-environment-setup)
-- [Running the Agent](#running-the-agent)
 - [Evaluation](#evaluation)
 - [Running the Evaluation Scripts](#running-the-evaluation-scripts)
 - [Sample Document and Expected Outputs](#sample-document-and-expected-outputs)
 - [Building Embeddings](#building-embeddings)
-- [Technologies Used](#this-project-uses)
+- [Technologies Used](#technologies Used)
 
 # Project Setup and Usage
 
@@ -117,6 +116,7 @@ python -m helpers.vector_store
 
 This uses `OpenAIEmbeddings` and stores vectors in the directory defined by `CHROMA_DIR` in `helpers/config.py`.
 
+## Technologies Used
 
 This project uses:
 
