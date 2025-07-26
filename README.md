@@ -10,7 +10,7 @@ Welcome to our project! we wish you happy coding and studying!!
 - [Running the Evaluation Scripts](#running-the-evaluation-scripts)
 - [Sample Document and Expected Outputs](#sample-document-and-expected-outputs)
 - [Building Embeddings](#building-embeddings)
-- [Technologies Used](#technologies Used)
+- [Technologies Used](#technologies-used)
 
 # Project Setup and Usage
 
