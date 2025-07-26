@@ -37,33 +37,19 @@ pip install -r requirements.txt
 
 `requirements.txt` lists packages like `langchain`, `openai`, `ragas`, `datasets`, and `chromadb`.
 
-## Environment Variables
+## API Key and Environment Setup
 
-The helpers expect an `OPENAI_API_KEY` environment variable. You can either export it in your shell or create a `.env` file at the repository root:
+This project uses the OpenAI API via the `OPENAI_API_KEY` environment variable. You can provide it in one of two ways:
+
+**Option 1 – Export it in your shell:**
 
 ```bash
 export OPENAI_API_KEY="sk-..."
-# or create a .env file
-```
 
-The `.env` file format:
-
-```
+**Option 2 – Create a .env file at the repository root:**
 OPENAI_API_KEY=your-key-here
-```
 
-## API Key
-
-The code loads your OpenAI key from an environment variable in `.env` as shown in `helpers/config.py`:
-
-```python
-load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-```
-
-Create a `.env` file in the project root:
-
-`helpers/config.py` reads this variable using `python-dotenv`.
+The key will be loaded using python-dotenv in helpers/config.py:
 
 ## Running the Agent
 
@@ -121,4 +107,11 @@ python -m helpers.vector_store
 This uses `OpenAIEmbeddings` and stores vectors in the directory defined by `CHROMA_DIR` in `helpers/config.py`.
 
 
+This project uses:
 
+- [LangChain](https://www.langchain.com/)
+- [OpenAI API](https://platform.openai.com/docs)
+- [RAGAS (RAG Evaluation)](https://github.com/explodinggradients/ragas)
+- [ChromaDB (Vector Store)](https://www.trychroma.com/)
+- [python-dotenv](https://pypi.org/project/python-dotenv/)
+- [Gradio (Optional UI)](https://www.gradio.app/)
