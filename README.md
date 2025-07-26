@@ -1,3 +1,18 @@
+Welcome to our project! we wish you happy coding and studying!!
+
+## Table of Contents
+
+- [Project Setup and Usage](#project-setup-and-usage)
+- [Car Accident Insurance RAG](#car-accident-insurance-rag)
+- [Requirements](#requirements)
+- [API Key and Environment Setup](#api-key-and-environment-setup)
+- [Running the Agent](#running-the-agent)
+- [Evaluation](#evaluation)
+- [Running the Evaluation Scripts](#running-the-evaluation-scripts)
+- [Sample Document and Expected Outputs](#sample-document-and-expected-outputs)
+- [Building Embeddings](#building-embeddings)
+- [Technologies Used](#this-project-uses)
+
 # Project Setup and Usage
 
 This repository provides a simple RAG example that works with a sample car-accident document. The main components are:
@@ -19,10 +34,6 @@ The files demonstrate how to build question answering and summarization pipeline
 
 The main entry point is `main_agent.py`, which routes user prompts either to the QA chain or the summarization chain. RAGAS evaluation scripts can be found under `ragas_evaluations/`.
 
-
-## Dependencies
-
-Install Python packages from `requirements.txt`:
 
 ## Requirements
 
