@@ -31,7 +31,7 @@ def run_qa_chain(prompt: str):
     print(f"\n[INFO] Retrieved Top-{len(retrieved_docs)} Chunks for query: '{prompt}'")
 
     # Optional: save to file
-    with open("retrieved_chunks.txt", "w", encoding="utf-8") as f:
+    with open("./results/retrieved_chunks.txt", "w", encoding="utf-8") as f:
         f.write(f"[Retriever] Using top_k = {TOP_K}")
         f.write(f"\n[INFO] Retrieved Top-{len(retrieved_docs)} Chunks for query: '{prompt}'")
         for i, doc in enumerate(retrieved_docs, 1):

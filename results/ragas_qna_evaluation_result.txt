@@ -1,0 +1,10 @@
+=== RAGAS EVALUATION FOR SINGLE Q&A ===
+Question: Where was the accident
+Answer: The accident occurred in downtown Chicago, at the intersection of Lincoln Avenue and Maple Street.
+Ground Truth: The accident occurred at the intersection of Lincoln Avenue and Maple Street in downtown Chicago.
+
+=== METRICS ===
+Faithfulness: 1.0000
+Answer Relevancy: 0.9620
+Context Precision: 1.0000
+Context Recall: 1.0000

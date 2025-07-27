@@ -20,14 +20,14 @@ env/
 
 
 # Evaluation results and other output
-results/*
-!results/refinement_summary_ground_truth.txt
+# results/*  # Commented out to allow tracking all results files
+# !results/refinement_summary_ground_truth.txt
 
 # Temporary evaluation or output files
 *.log
 *.tmp
-*_evaluation_result.txt
-*_result.txt
+# *_evaluation_result.txt  # Commented out to allow tracking evaluation results
+# *_result.txt  # Commented out to allow tracking result files
 
 # Local settings
 *.env
