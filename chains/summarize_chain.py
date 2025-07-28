@@ -69,7 +69,7 @@ REFINED SUMMARY:
 tools = [
     Tool(
         name="RefineSummarizer",
-        func=lambda x: refine_summary(x),
+        func=refine_summary,
         description="Use this tool to create comprehensive summaries of documents with chronological timelines and structured format"
     )
 ]
@@ -80,13 +80,16 @@ summarize_chain = initialize_agent(
     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
     verbose=True,
     handle_parsing_errors=True,
+    max_iterations=25,  # default is 5
+    max_execution_time=120,  # seconds
     agent_kwargs={
         "system_message": "You are a document summarization assistant. When asked to summarize a document, use the RefineSummarizer tool."
     }
 )
 
-def run_summary_chain(prompt: str):
-    return summarize_chain.run(prompt)
+def run_summary_chain():
+    document_text = "\n\n".join([doc.page_content for doc in split_docs])
+    return summarize_chain.run(f"summarize the following document:\n{document_text}")
 
 
 if __name__ == "__main__":
@@ -94,7 +97,7 @@ if __name__ == "__main__":
     print("Starting document summarization using agent...")
 
     try:
-        result = run_summary_chain("summarize the document")
+        result = run_summary_chain()
 
         print("\n" + "="*50)
         print("SUMMARY RESULT:")
