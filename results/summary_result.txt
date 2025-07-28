@@ -1,11 +1,12 @@
-The case study explores a car accident in downtown Chicago involving Ms. Emily Ross and Mr. Daniel Vega. 
-Ms. Ross had full-coverage insurance, while Mr. Vega had liability-only coverage. 
-The accident occurred when Mr. Vega ran a red light and collided with Ms. Ross. 
-The study delves into the financial and legal implications of auto insurance, including key policy elements, 
-claims processing, and the ethical dynamics of the insurance process. 
-The police report found Mr. Vega at fault. Ms. Ross's Toyota Corolla incurred $9,700 in damages, 
-while Mr. Vega's Ford F-150 had $3,200 in damages. 
-Ms. Ross received medical treatment covered by her insurance, and her insurer recovered costs from Mr. Vega's insurer through subrogation. 
-Both parties avoided litigation by admitting liability and handling claims fairly. The report emphasizes the importance of comprehensive insurance coverage, 
-ethical claim handling, and personal responsibility in the event of a car accident. 
-Key insurance terms are introduced to enhance understanding of the auto insurance process.
+The document details a car accident on May 12, 2025, at the intersection of Lincoln and Maple Street
+in Chicago, involving Emily Ross, an office manager, and Daniel Vega, a delivery driver. Emily was
+driving home for dinner when Daniel, under pressure from work, ran a red light and collided with her
+vehicle. The incident resulted in Emily sustaining injuries, including a rotator cuff injury and a
+mild concussion, while Daniel faced financial strain due to repair costs. The insurance claims
+process involved both parties, with Emily's insurer, State Auto, covering her medical and vehicle
+repair expenses, while Daniel's liability-only policy only covered Emily's damages. The timeline
+includes key events from the accident to the resolution of claims, highlighting the emotional and
+financial impacts on both individuals. By August 2025, Emily received her final insurance statement,
+marking the end of her ordeal, while Daniel completed his loan payment for truck repairs and began
+attending defensive driving seminars to improve his skills. The case was recognized by Midwest
+Mutual as an exemplary resolution, emphasizing the importance of cooperation in the claims process.
