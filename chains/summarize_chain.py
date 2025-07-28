@@ -1,4 +1,3 @@
-
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -10,9 +9,10 @@ from langchain.agents.agent_types import AgentType
 from helpers.config import OPENAI_API_KEY
 from helpers.document_loader import split_docs
 from langchain.prompts import PromptTemplate
+import textwrap
 
 # === LLM Setup ===
-llm = ChatOpenAI(temperature=0, api_key=OPENAI_API_KEY, model="gpt-4.1-nano")
+llm = ChatOpenAI(temperature=0, api_key=OPENAI_API_KEY, model="gpt-4o-mini")
 
 # === Summarization Prompt ===
 summarization_prompt = """You are an expert document summarizer specializing in creating comprehensive, well-structured summaries with chronological timelines.
@@ -80,8 +80,8 @@ summarize_chain = initialize_agent(
     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
     verbose=True,
     handle_parsing_errors=True,
-    max_iterations=25,  # default is 5
-    max_execution_time=120,  # seconds
+    max_iterations=50,  # default is 5
+    max_execution_time=300,  # seconds
     agent_kwargs={
         "system_message": "You are a document summarization assistant. When asked to summarize a document, use the RefineSummarizer tool."
     }
@@ -89,7 +89,10 @@ summarize_chain = initialize_agent(
 
 def run_summary_chain():
     document_text = "\n\n".join([doc.page_content for doc in split_docs])
-    return summarize_chain.run(f"summarize the following document:\n{document_text}")
+    result = summarize_chain.invoke({"input": f"summarize the following document:\n{document_text}"})
+    return result["output"]
+
+
 
 
 if __name__ == "__main__":
@@ -106,8 +109,12 @@ if __name__ == "__main__":
         print("="*50)
 
         os.makedirs("results", exist_ok=True)
+
+        wrapped = "\n\n".join(
+            textwrap.fill(p, width=100) for p in result.split("\n\n")
+        )  # or 80 if you prefer narrower
         with open("results/summary_result.txt", "w", encoding="utf-8") as f:
-            f.write(result)
+            f.write(wrapped)
         print("\nSummary saved to results/summary_result.txt")
 
     except Exception as e:
