@@ -16,18 +16,18 @@ Welcome to our project! we wish you happy coding and studying!!
 
 This repository provides a simple RAG example that works with a sample car-accident document. The main components are:
 
-- `Car_Accident_Insurance_Case.txt` – the source document used to generate answers or summaries.
+- `Intersection_at_Maple_Street.txt` – the source document used to generate answers or summaries.
 - `main_agent.py` – an interactive entry point that routes prompts to a Q&A or summarization agent.
 - The `ragas_evaluations/` directory – scripts that evaluate either Q&A or summarization output.
 - The `results/` directory – contains example evaluation files and the summary text produced from the document.
 
 # Car Accident Insurance RAG
 
-This project demonstrates retrieval-augmented generation (RAG) for both summarization and question answering over a sample case study. The case study text is provided in `Car_Accident_Insurance_Case.txt`.
+This project demonstrates retrieval-augmented generation (RAG) for both summarization and question answering over a sample case study. The case study text is provided in `Intersection_at_Maple_Street.txt`.
 
 The `helpers/` package stores configuration, document loading utilities, and example prompts. Evaluation scripts and results are in the `ragas_evaluations/` and `results/` directories.
 
-The system indexes the content of **Car_Accident_Insurance_Case.txt** and allows interactive queries or summary generation via `main_agent.py`.
+The system indexes the content of **Intersection_at_Maple_Street.txt** and allows interactive queries or summary generation via `main_agent.py`.
 
 The files demonstrate how to build question answering and summarization pipelines with LangChain and OpenAI as well as how to evaluate them using the **ragas** metrics framework.
 
@@ -99,7 +99,7 @@ Both scripts write their results to the `results/` directory.
 
 ## Sample Document and Expected Outputs
 
-The file `Car_Accident_Insurance_Case.txt` contains the car-accident case study that the agents operate on. Running the provided scripts will create/update text files in `results/`:
+The file `Intersection_at_Maple_Street.txt` contains the car-accident case study that the agents operate on. Running the provided scripts will create/update text files in `results/`:
 
 - `summary_result.txt` – the generated summary of the case.
 - `ragas_qna_evaluation_result.txt` – metrics for one Q&A example.
