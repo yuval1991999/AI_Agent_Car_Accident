@@ -64,7 +64,7 @@ REFINED SUMMARY:
         question_prompt=question_prompt,
         refine_prompt=refine_prompt
     )
-    return chain.run(split_docs)
+    return chain.invoke({"input_documents": split_docs})
 
 tools = [
     Tool(
