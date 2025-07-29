@@ -95,27 +95,27 @@ def run_summary_chain():
 
 
 
-if __name__ == "__main__":
-    print("Summarize Chain loaded successfully!")
-    print("Starting document summarization using agent...")
+# if __name__ == "__main__":
+#     print("Summarize Chain loaded successfully!")
+#     print("Starting document summarization using agent...")
 
-    try:
-        result = run_summary_chain()
+#     try:
+#         result = run_summary_chain()
 
-        print("\n" + "="*50)
-        print("SUMMARY RESULT:")
-        print("="*50)
-        print(result)
-        print("="*50)
+#         print("\n" + "="*50)
+#         print("SUMMARY RESULT:")
+#         print("="*50)
+#         print(result)
+#         print("="*50)
 
-        os.makedirs("results", exist_ok=True)
+#         os.makedirs("results", exist_ok=True)
 
-        wrapped = "\n\n".join(
-            textwrap.fill(p, width=100) for p in result.split("\n\n")
-        )  # or 80 if you prefer narrower
-        with open("results/summary_result.txt", "w", encoding="utf-8") as f:
-            f.write(wrapped)
-        print("\nSummary saved to results/summary_result.txt")
+#         wrapped = "\n\n".join(
+#             textwrap.fill(p, width=100) for p in result.split("\n\n")
+#         )  # or 80 if you prefer narrower
+#         with open("results/summary_result.txt", "w", encoding="utf-8") as f:
+#             f.write(wrapped)
+#         print("\nSummary saved to results/summary_result.txt")
 
-    except Exception as e:
-        print(f"Error during summarization: {e}")
+#     except Exception as e:
+#         print(f"Error during summarization: {e}")
