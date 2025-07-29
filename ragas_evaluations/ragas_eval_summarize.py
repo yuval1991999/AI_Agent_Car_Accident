@@ -2,11 +2,12 @@ from ragas.metrics import answer_correctness
 from ragas.evaluation import evaluate
 import sys
 import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from helpers.config import SUMMARY_RESULT_PATH, SUMMARY_GROUND_TRUTH_PATH, RAGAS_SUMMARIZE_EVALUATION_PATH, FILE_PATH, \
     OPENAI_API_KEY
 from langchain_openai import ChatOpenAI
 from datasets import Dataset
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 def get_summary():
@@ -51,4 +52,4 @@ def make_summarize_evaluation():
     except Exception as e:
         print(f"❌ Error evaluating answer correctness: {e}")
 
-# make_summarize_evaluation()
+make_summarize_evaluation()
