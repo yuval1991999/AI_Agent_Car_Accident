@@ -1,4 +1,4 @@
-from chains.qa_chain import run_qa_chain
+# from chains.qa_chain import run_qa_chain
 from ragas_evaluations.ragas_eval_summarize import get_summary
 from ragas_evaluations.ragas_eval_qna import make_qna_ragas_evaluation
 from ragas_evaluations.ragas_eval_summarize import make_summarize_evaluation
@@ -33,8 +33,8 @@ def route_agent(prompt: str):
 
     if decision == "qa":
         print("🤖 Routing to Q&A Agent...")
-        make_qna_ragas_evaluation(prompt)
-        return run_qa_chain(prompt)
+        answer = make_qna_ragas_evaluation(prompt)
+        return answer
     elif decision == "summarization":  # The keywords have indicated summarization intent
         print("📝 Routing to Summarization Agent...")
         make_summarize_evaluation()

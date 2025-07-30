@@ -122,4 +122,4 @@ def make_summarize_evaluation():
             f.write("\n\n--- CONTEXT (truncated) ---\n")
             f.write(context_truncated)
 
-make_summarize_evaluation()
+# make_summarize_evaluation()

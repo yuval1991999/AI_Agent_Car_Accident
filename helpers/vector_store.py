@@ -11,4 +11,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
 vectorstore = Chroma.from_documents(split_docs, embedding=embeddings, persist_directory=CHROMA_DIR)
 
-retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": TOP_K})
+retriever = vectorstore.as_retriever(
+    search_type="mmr",
+    search_kwargs={"k": TOP_K, "lambda_mult": 0.7}
+)

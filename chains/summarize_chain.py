@@ -9,7 +9,6 @@ from langchain.agents.agent_types import AgentType
 from helpers.config import OPENAI_API_KEY
 from helpers.document_loader import split_docs
 from langchain.prompts import PromptTemplate
-import textwrap
 
 # === LLM Setup ===
 llm = ChatOpenAI(temperature=0, api_key=OPENAI_API_KEY, model="gpt-4o-mini")

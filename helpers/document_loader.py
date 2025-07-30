@@ -5,8 +5,16 @@ from .config import FILE_PATH, CHUNK_SIZE, CHUNK_OVERLAP
 loader = TextLoader(FILE_PATH, encoding="utf-8")
 docs = loader.load()
 
-splitter = RecursiveCharacterTextSplitter(chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP)
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size=CHUNK_SIZE, 
+    chunk_overlap=CHUNK_OVERLAP, 
+    separators=["\n\n", "\n", ".", " ", "?", "!", ";"]
+    )
+
 split_docs = splitter.split_documents(docs)
+
+
+
 
 # from zep_python.langchain import ZepLoader
 

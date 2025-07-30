@@ -1,10 +1,15 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from chains.qa_chain import run_qa_chain, retriever
 from helpers.questions import questions, ground_truths
-from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall
+from ragas.metrics import faithfulness, context_precision, context_recall
 from ragas.evaluation import evaluate
 from datasets import Dataset
 from helpers.config import RAGAS_QNA_EVALUATION_PATH
 from difflib import get_close_matches
+
 
 def find_ground_truth(prompt: str):
     """
@@ -39,12 +44,11 @@ def make_qna_ragas_evaluation(prompt: str):
 
     results = evaluate(
         dataset,
-        metrics=[faithfulness, answer_relevancy, context_precision, context_recall]
+        metrics=[faithfulness, context_precision, context_recall]
     )
 
     results_dict = {
         "faithfulness": float(results["faithfulness"][0]),
-        "answer_relevancy": float(results["answer_relevancy"][0]),
         "context_precision": float(results["context_precision"][0]),
         "context_recall": float(results["context_recall"][0])
     }
@@ -64,4 +68,6 @@ def make_qna_ragas_evaluation(prompt: str):
 
     print("✅ Evaluation complete. Check the output file.")
 
+    return answer
 
+make_qna_ragas_evaluation("Where was the accident?")
