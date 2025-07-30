@@ -1,4 +1,4 @@
-from chains.qa_chain import run_qa_chain
+# from chains.qa_chain import run_qa_chain
 from ragas_evaluations.ragas_eval_summarize import get_summary
 from ragas_evaluations.ragas_eval_qna import make_qna_ragas_evaluation
 from ragas_evaluations.ragas_eval_summarize import make_summarize_evaluation
@@ -33,8 +33,8 @@ def route_agent(prompt: str):
 
     if decision == "qa":
         print("🤖 Routing to Q&A Agent...")
-        make_qna_ragas_evaluation(prompt)
-        return run_qa_chain(prompt)
+        answer = make_qna_ragas_evaluation(prompt)
+        return answer
     elif decision == "summarization":  # The keywords have indicated summarization intent
         print("📝 Routing to Summarization Agent...")
         make_summarize_evaluation()
@@ -44,13 +44,21 @@ def route_agent(prompt: str):
 
 
 def main():
-    interface = gr.Interface(
-        fn=route_agent,
-        inputs=gr.Textbox(label="Prompt", placeholder="Ask a question or request a summary"),
-        outputs="text",
-        title="Main Agent (LLM-Routed)",
-    )
-    interface.launch()
+    with gr.Blocks(title="Main Agent (LLM-Routed)", theme=gr.themes.Soft()) as demo:
+        gr.Markdown("# 🤖 Main Agent (LLM-Routed)")
+        gr.Markdown("Enter a question about the case or request a summary.")
+
+        prompt = gr.Textbox(
+            label="Prompt",
+            placeholder="Ask a question or request a summary",
+            lines=3,
+        )
+        submit = gr.Button("Submit")
+        output = gr.Markdown()
+
+        submit.click(route_agent, inputs=prompt, outputs=output)
+
+    demo.launch()
 
 
 if __name__ == "__main__":
